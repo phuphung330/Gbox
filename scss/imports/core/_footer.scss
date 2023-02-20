@@ -1,0 +1,196 @@
+// css footer
+.footer {
+    margin-top: 60px;
+    --height-footer: 510px;
+    height: var(--height-footer);
+ 
+    @include text(12px, pnr, 30.48px, $text-cl, uppercase);
+    letter-spacing: 1.2px;
+    position: relative;
+    &.contact__footer{
+        margin-top: unset;
+        --height-footer: 520px;
+        &::before{
+            top: unset;
+        }
+        .footer__contact{
+            padding-top: 50px;
+            &-left{
+                .contact__text{
+                    width: 210px;
+                    &:first-child{
+                        margin-top: -8px;
+                    }
+                    &:last-child{
+                        width: 240px;
+                    }
+                }
+            }
+
+        }
+
+    }
+    &::before{
+        position: absolute;
+        top: 132px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:$yellow-cl;
+        content: '';
+        z-index: -1;
+    }
+
+    &__contact {
+        &-left {
+            span {
+                display: inline-block;
+            }
+
+            .mail__name {
+
+                margin-bottom: 29px;
+            }
+
+            .tell {
+                margin-bottom: 30px;
+
+                span {
+                    margin-left: 35px;
+                }
+            }
+
+            .address__detail {
+                max-width: 222px;
+            }
+
+        }
+
+        &-right {
+            .contact__text {
+                max-width: 250px;
+
+                &:nth-child(2) {
+                    margin-bottom: 43px;
+                }
+            }
+
+            .contact__form {
+                text-transform: capitalize;
+
+                &-item {
+                    margin-bottom: 15px;
+
+                    &.--message {
+                        margin-bottom: 0;
+                        position: relative;
+                        text-align: end;
+                        label{
+                            text-align: initial;
+                        }
+                    }
+
+                }
+
+                label {
+                    display: block;
+                    line-height: normal;
+                }
+
+                input,
+                textarea {
+                    border: none;
+                    background: transparent;
+                    border-bottom: 1px solid #000;
+                    resize: none;
+                    height: 20px;
+                    width: 100%;
+                    padding-top: 5px;
+                    padding-left: 5px;
+                    outline: none;
+
+                }
+
+                textarea {
+                    background: linear-gradient(to right, #ffde00, #ffde00 10px, transparent 10px), linear-gradient(to left, #ffde00, #ffde00 10px, transparent 10px), repeating-linear-gradient(#ffde00, #ffde00 23px, #171717 24px);
+                    border: none;
+                    margin-bottom: 0;
+                    height: 56px;
+                    line-height: 24px;
+                    width: 100%;
+                }
+                .SendBtn{
+                    text-transform: uppercase;
+                    color: $white-cl;
+                    background: $black-cl;
+                    font-family: pnb;
+                    font-size: 10px;
+                    padding: 5px 10px;
+                    text-align: end;
+                   
+                }
+            }
+        }
+    }
+    &__bottom{
+        font-size: 10px;
+        text-align: center;
+        margin-top: 49px;
+        img{
+            transform: rotate(-90deg);
+            width: 20px;
+        }
+        .footer__copyright{
+            line-height: normal;
+        }
+    }
+
+}
+
+
+@include xs {   
+    .footer{
+        &.contact__footer{
+            --height-footer:245px;
+            &::before{
+                top: 0;
+                bottom: unset;
+            }
+            .footer__contact{
+                display: none;
+            }
+            .footer__bottom{
+                margin-top: unset;
+                padding-top: 30px;
+            }
+        }
+        // aboutus page
+        &.footer__aboutus{
+            .tell{
+                margin-bottom: unset;
+            }
+            .mail__name{
+                margin-bottom: unset;
+            }
+            .footer__bottom{
+                margin-top: 115px;
+            }
+        }
+        --height-footer:245px;
+        &::before{
+            bottom: -265px;
+            top: unset;
+        }
+        &__contact{
+            text-align: center;
+            &-left{
+                .address__detail{
+                    margin: 0 auto;
+                }
+            }
+            &-right{
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,335 @@
+// css img, button, heading, title, input, elements, components...
+
+a {
+    text-decoration: none;
+}
+
+// colors (tuỳ chỉnh)
+
+// css article (nội dung chi tiết bài viết)
+article {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        // font-family: ib; // font bold
+        display: block;
+    }
+
+    h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+        margin: 0 0 0.67rem 0;
+    }
+
+    h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+        margin: 0 0 0.75rem 0;
+    }
+
+    h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+        margin: 0 0 0.83rem 0;
+    }
+
+    h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+        margin: 0 0 1.12rem 0;
+    }
+
+    h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+        margin: 0 0 1.5rem 0;
+    }
+
+    h6 {
+        font-size: 0.67rem;
+        margin: 0 0 1.67rem 0;
+    }
+
+    p {
+        margin: 0 0 1.12rem 0;
+    }
+
+    strong {
+        // font-family: ib; // font bold
+    }
+
+    ol,
+    ul {
+        list-style: initial;
+        padding-left: 18px;
+    }
+
+    img {
+        display: inline-block;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 25px auto;
+    }
+
+    .video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        margin: 25px auto;
+
+        iframe,
+        video {
+            position: absolute;
+            @include size(100%);
+            top: 0;
+            left: 0;
+        }
+    }
+
+    @include xs {
+        img {
+            margin: 20px auto;
+        }
+    }
+}
+
+
+
+// BTN WORKS
+.btnWorks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 37px;
+    position: relative;
+   
+
+    &__text {
+        @include text(12px, pnsb, 22px, $text-cl, uppercase);
+    }
+
+    &__icon {
+        width: 11px;
+        
+    }
+}
+
+// BOX_NUMBER
+.box__number{
+    --heightNumber: 12rem;
+    min-width: 10rem;
+    height: var(--heightNumber);
+    background-color: $yellow-cl;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    h5{
+        margin-top: -20px;
+    margin-bottom: 21px;
+
+        @include text(11px, pnr, 20px, $text-cl, uppercase);
+    }
+    h3{
+        @include text(66.46px, din, unset, $text-cl, uppercase);
+    }
+}
+
+// FULL_SCREEN
+.fullScreen {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+        font-family: pnr;
+        text-transform: capitalize;
+    }
+
+    i {
+        display: flex;
+
+        svg {
+            width: 12px;
+            margin-left: 20px;
+        }
+    }
+}
+
+// BACK TO ALL
+.backToAll {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+   
+
+    span {
+        margin-right: 7px;
+        font-family: pnr;
+        text-transform: capitalize;
+    }
+
+    i {
+        display: flex;
+        margin-right: -4px;
+
+        svg {
+            width: 12px;
+            margin-left: 27px;
+            transform: rotate(90deg);
+        }
+    }
+
+}
+
+// WELCOME SECTION
+.welcome {
+    position: relative;
+    padding-top: 45px;
+    text-align: center;
+
+    &::after {
+        position: absolute;
+        content: '';
+        height: 0.5px;
+        width: 30px;
+        background: $black-cl;
+        bottom: -54px;
+        width: 323px;
+        left: 50%;
+        transform: translate(-50%);
+
+    }
+
+    &__intro {
+        @include text(14.4px, pnl, 22px, $text-cl, uppercase);
+        margin: 0 auto;
+        max-width: 89px;
+        margin-bottom: 21px;
+    }
+
+    &__title {
+        @include text(20.04px, pnb, 22px, $grey-cl, uppercase);
+        letter-spacing: 4px;
+        position: relative;
+        max-width: max-content;
+        margin: 0 auto;
+        background: $yellow-cl;
+        margin-bottom: 25px;
+    }
+
+    &__desc {
+        @include text(12px, ar, 22px, $text-cl, none);
+        max-width: 760px;
+        margin: 0 auto;
+
+        span {
+            font-weight: 700;
+        }
+    }
+}
+
+
+// FOOTER MODIFY
+.footer.studio__footer{
+    --height-footer: 395px;
+    .container{
+        height: 100%;
+    }
+
+
+    @include xs {
+        .footer.studio__footer{
+            --height-footer:222px;
+        }
+    }    
+}
+
+// BOOK BTN
+.bookBtn{
+        
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    i{
+        svg{
+            width: 15px;
+        }
+    }
+    &__text{
+       text-align: center;
+        background: $grey-cl;
+        padding: 20px 15px;
+        border-radius: 12px;
+        @include text(25px, pneb, 30.48px, $yellow-cl, uppercase);
+    }
+}
+
+
+.btnctrs{
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    @include text(12px, pnr, unset, $text-cl, capitalize);
+    display: flex;
+    width: max-content;
+  
+
+  
+
+    margin-top: 25px;
+    &::before{
+        content: '';
+        height: 56%;
+        width: 1px;
+        top: 22%;
+        left: 56%;
+        transform: translate(-53%);
+        background:$black-cl;
+        position: absolute;
+        
+    }
+    .btnctr.--reverse{
+        display: flex;
+        padding-right: 19px;
+        i{
+   
+            display: flex;
+            svg{
+                width: 11px;
+                transform: rotate(90deg);
+            }
+        }
+        span{
+            padding-left: 20px;
+        }
+    }
+    .btnctr.--next{
+        display: flex;
+        padding-left: 19px;
+            span{
+             padding-right: 20px;
+            }
+            i{
+                display: flex;
+                svg{
+                    width: 11px;
+                    transform: rotate(-90deg);
+
+                }
+            }
+    }
+
+
+}
+
+
+

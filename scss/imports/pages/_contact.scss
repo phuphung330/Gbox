@@ -1,0 +1,87 @@
+.contact{
+    background: url(../img/contact-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 96px;
+    padding-bottom: 13px;
+    text-align: center;
+    &__bottom{
+        @include text(12px, pnr, 30.48px, #f1f1f1, uppercase);
+        margin-top: 25px;
+   
+        display: flex;
+        justify-content: center;
+        &-left{
+            margin: 0 30px;
+            text-align: right;
+            max-width: 50%;
+            flex: 0 0 50%;
+           
+            .address__detail{
+                max-width: 185px;
+                margin-left: auto;
+            }
+          
+            
+        }
+        &-right{
+            margin: 0 30px;
+            text-align: left;
+            max-width: 50%;
+            flex: 0 0 50%;
+            .mail__name{
+                max-width: 220px;
+            }
+            .tell{
+                margin-top: 29px;
+                span{
+                    margin-left: 35px;
+                }
+            }
+        
+        }
+    }
+    .btnWorks{
+        margin-top: 50px;
+        i{
+            svg{
+                .cls-1{
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+}
+
+
+@include xs{
+    .contact{
+        &__bottom{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-left{
+                text-align: center;
+                order: 2;
+                max-width: 180px;
+                p{
+                    max-width: unset;
+                }
+            }
+            &-right{
+                text-align: center;
+                max-width: unset;
+                order: 1;
+                p{
+                    max-width: unset;
+                    
+                }
+                .tell{
+                    margin-top: unset;
+
+                }
+            }
+        }
+    }
+}

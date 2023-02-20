@@ -1,0 +1,74 @@
+.homepage{
+    &.aboutpage{
+        .header{
+            .container{
+                .header__menu{
+                    &::before{
+                        height: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.aboutus{
+    background: url(../img/about-us.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 104px;
+    padding-bottom: 74px;
+    &__title{
+        @include text(36px, pnb, 58px, $yellow-cl, uppercase);
+        letter-spacing: 21.6px;
+        
+    }
+    &__desc{
+        margin-top: 11px;
+        @include text(18px, pnl, 40px, $white-cl, none);    
+        margin-bottom: 46px;
+    }
+    &__bottom{
+        display: flex;
+        p{
+            @include text(14px, pnr, 20px, #e9e9ea, none);    
+            margin-left: 20px;
+            max-width: 107px;
+            order: 2;
+        }
+        .bookBtn{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &__text{
+                background: #ffde00;
+                color: $black-cl;
+            }
+        }
+    }
+}
+
+
+@include xs{
+    .aboutus{
+        &__title{
+            @include text(28px, pnb, 58px, $yellow-cl, uppercase);
+        }
+
+        &__desc{
+            @include text(16px, pnl, 34px, $white-cl, none);    
+        }
+        &__desc,
+        &__bottom{
+            padding-left: 16px;
+        }
+    }
+}
+
+

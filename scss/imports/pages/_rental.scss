@@ -1,0 +1,330 @@
+.rental{
+
+    &__left{
+        width: calc(100% / 16*5);
+        background: #525355;
+        padding-left: 20px;
+        padding-top: 70px;
+        height: 640px;
+        .box__number{
+            width: 12rem;
+        }
+        &-title{
+            margin-top: 30px;
+            @include text(32px, pneb, 30.48px, $white-cl, none);
+        }
+        .content{
+            &__title{
+                margin-bottom: 10px;
+                @include text(12px, pnr, 30.48px, $white-cl, uppercase);
+                
+            }
+            &__desc{
+                @include text(14px, pnr, 20px, $white-cl, none);
+            }
+            
+            
+        }
+    }
+
+    &__right{
+        width: calc(100% / 16 * 11);
+        padding-top: 70px;
+        margin-left: 50px;
+        &-form{
+            h2{
+                margin-bottom: 35px;
+                @include text(28px, pneb, 30.48px, $text-cl, none); 
+            }
+            .form{
+                @include text(12px, pnr, none, $text-cl, none);
+                display: flex;
+                &__item{
+                  
+                    width: 230px;
+                    &:first-child{
+                        margin-right: 70px;
+                    }
+                    .form__group{
+                        margin-bottom: 20px;
+                        input{
+                            width: 100%;
+                            outline: none;
+                            border: 0;
+                            border-bottom: 0.1rem solid #000;
+                            background-color: transparent;
+                            padding: 1rem 1rem;
+                            font-family: ar;
+                            
+                           
+                        }
+                        textarea{
+                            border: 1px solid #000;
+                            margin-top: 34px;
+                        
+                            outline: none;
+                            width: 100%;
+                            resize: none;
+                        }
+                    }
+                }
+            }
+            .studio-select{
+                margin-bottom: 20px;
+                .form__label{
+                    margin-bottom: 20px;
+                }
+                &__list{
+                    margin-top: 16px;
+                    display: flex;
+                    &-item{
+                        cursor: pointer;
+                        margin:0 10px;
+                        @include transition(0.5s);
+                        border: 0.5px solid #000;
+                        &:hover{
+                            background:$yellow-cl;
+                            border: 0.5px solid #000;
+                            @include transition(0.5s);
+                            span{
+                                color: #111111;
+                                @include transition(0.5s);
+                            }
+
+                        }
+                        
+                        background:#111111;
+                        &:first-child{
+                            margin-left: unset;
+                        }
+    
+                        padding: 5px 11px;
+                        span{
+                            display: flex;
+                            font-family: 'din';
+                            font-size: 24px;
+                            line-height: normal;
+                            color: #b4b4b4;
+                        }
+                    }
+                }
+            }
+
+            .form.request{
+                @include text(12px, pnr, none, $text-cl, none);
+                .group{
+                    display: flex;
+                     margin-bottom: 33px;
+                     .form__item{
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 70px;
+                        width: 230px;
+                        .form__group{
+                            display: flex;
+                            flex-direction: column;
+                            textarea{
+                                border: 1px solid #000;
+                                margin-top: 3rem;
+                            
+                                outline: none;
+                                width: 100%;
+
+                            }
+                            
+                            
+                       
+                        }
+                   
+                    }
+                }
+            }
+
+            .form.date{
+                @include text(12px, pnr, none, $text-cl, none);
+                position: relative;
+                .group{
+                    display: flex;
+                    .form__item{
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 70px;
+                        width: 230px;
+                        &:last-child{
+                          margin-top: 43px;
+                            .form__group{
+                                margin-bottom: unset;
+                            }
+                        }
+                        .form__group{
+                            display: flex;
+                            flex-direction: column;
+                            label{
+                                margin-bottom: 20px;
+                            }
+                            input{
+                                border: 0.1rem solid #000;
+                            }
+                        }
+
+                        
+                    }
+                    .form__item{
+                        &.icon{
+                            position: absolute;
+   
+   
+                            transform: rotate(-90deg);
+                            display: unset;
+                            width: 15px;
+                            left: 40%;
+                            top: 51%;
+                           
+                            i{
+                                width: 15px;
+                            }
+                        }
+                    }
+                    
+
+
+                }
+            }
+
+            .form__input{
+                @include text(12px, pnr, none, $text-cl, none);
+                .form__group{
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                    label{
+                        margin-bottom: 20px;
+                    }
+                    input{
+                        width: 532px;
+                        outline: none;
+                        border: 0;
+                        border: 0.1rem solid #000;
+                        background-color: transparent;
+                        padding: 1rem 1rem;
+                        font-family: ar;
+                    }
+
+                }
+            }
+            .rentalBtn{
+                display: flex;
+                p{
+                    order: 2;
+                    @include text(12px, pnr, 24px, $text-cl, none);
+                    span{
+                        font-family: pnb;
+                    }     
+                }
+                .bookBtn{
+                    order: 1;
+                    margin-right: 20px;
+                    &__text{
+                        font-size: 20px;
+                        border-radius: 8px;
+                        padding: 35px 12px;
+                    }
+                }
+            }
+
+
+
+        
+
+
+        }
+    }
+    .container{
+        display: flex;
+
+    }
+}
+
+
+@include xs{
+    .rental{
+
+        &__left{
+            width: unset;
+            background: unset;
+            display: flex;
+            height: unset;
+            padding-left: unset;
+            &-textbox{
+                margin-left: 27px;
+            }
+            &-title{
+                color: $black-cl;
+                margin-top: unset;
+            }
+            .content{
+                margin-top: 10px;
+                &__title{
+                    color: $black-cl;
+                    margin-bottom: unset;
+                    line-height: normal;
+                }
+                &__desc{
+                    color: $black-cl;
+                }
+            }
+        }
+        &__right{
+            width: unset;
+            margin-left: unset;
+            &-form{
+                .form{
+                    display: unset;
+                    &__item{
+                        width: unset;
+                        margin-right: unset;
+                        &:first-child{
+                            margin-right: unset;
+                        }
+                    }
+                }
+                .form{
+                    &.request{
+                        display: unset;
+                        .group{
+                            display: unset;
+                            .form__item{
+                                width: unset;
+                                margin-right: unset;
+                            }
+                        }
+                    }
+                }
+                .form{
+                    &.date{
+                        display: unset;
+                        .group{
+                            display: unset;
+                            .form__item{
+                                display: unset;
+                                width: unset;
+                            }
+                        }
+                    }
+                }
+
+                .form__input{
+                    .form__group{
+                        input{
+                            width: unset;
+                        }
+                    }
+                }
+            }
+        }
+        .container{
+            display: inherit;
+            
+        }
+    }
+}

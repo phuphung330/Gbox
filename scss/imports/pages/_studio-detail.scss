@@ -1,0 +1,338 @@
+.studioDetail{
+    .backToAll{
+        padding-top: 14px;
+        padding-bottom: 22px;
+    }
+    &__slider{
+        overflow: hidden;
+        &-item{
+            @include ImgWrapper ();
+            overflow: hidden;
+            height: 0;
+            padding-bottom: 52.65%;
+            width: 100%;
+            img{
+                @include mid($flex:false);
+                transform: translate(-50%, -50%);
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+    &__bottom{
+        display: flex;
+        padding-bottom: 60px;
+        border-bottom: 1px solid $black-cl;
+        padding-left: 20px;
+        padding-right: 20px;
+        // col 2/16
+        .box__number{
+            width: calc(100% /16 * 2);
+            min-width: 12rem;
+           
+
+        }
+        // col 5/16
+        &-info{
+            
+            @include text(12px, pnr, 30.48px, $text-cl, uppercase);
+            letter-spacing: 2.8px;
+            width: calc(100% /16 * 5);
+            margin-top: 22px;
+            padding-left: 80px;
+            span{
+               font-size: 12px;
+            }
+            p{
+                text-transform: none;
+                letter-spacing: normal;
+                
+            }
+
+        }
+        // col 3/16
+        .download{
+            @include text(12px, pnr, unset, $text-cl, capitalize);
+            height: 100%;
+
+            width: calc(100% /16 * 3);
+            margin-top: 25px;
+            display: flex;
+            span{
+                padding-right: 5px;
+            }
+            i{
+                display: flex;
+                svg{
+                    width: 13px;
+                }
+            }
+        }
+        // col 3/16
+        .fullScreen{
+
+            height: 100%;
+            @include text(12px, pnr, unset, $text-cl, capitalize);
+            width: calc(100% /16 * 3);
+            align-items: center;
+            margin-top: 25px;
+            height: 100%;
+        
+            i{
+                display: flex;
+                svg{
+                    width: 13px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        // col 3/16
+        .btnctrs{
+            position: relative;
+            cursor: pointer;
+            height: 100%;
+            @include text(12px, pnr, unset, $text-cl, capitalize);
+            display: flex;
+            justify-content: flex-end;
+            width: calc(100% /16 *3);
+       
+            margin-top: 25px;
+            &::before{
+                content: '';
+                height: 56%;
+                width: 1px;
+                top: 22%;
+                left: 58%;
+                transform: translate(-53%);
+                background:$black-cl;
+                position: absolute;
+                
+            }
+            .btnctr.--reverse{
+                display: flex;
+                padding-right: 19px;
+                i{
+           
+                    display: flex;
+                    svg{
+                        width: 11px;
+                        transform: rotate(90deg);
+                    }
+                }
+                span{
+                    padding-left: 20px;
+                }
+            }
+            .btnctr.--next{
+                display: flex;
+                padding-left: 19px;
+                    span{
+                     padding-right: 20px;
+                    }
+                    i{
+                        display: flex;
+                        svg{
+                            width: 11px;
+                            transform: rotate(-90deg);
+
+                        }
+                    }
+            }
+
+
+        }
+
+
+    }
+
+    &__priceplan{
+        margin-top: 21px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+        column-gap: 60px;
+        padding-bottom: 53px;
+        &-pricing{
+            h2{
+                @include text(32px, pneb, 30.48px, $text-cl, capitalize);
+                margin-bottom: 25px;
+            }
+            .price__text{
+                @include text(14px, pnr, 20px, $text-cl,none);
+                margin-bottom: 31px;
+                span{
+                    @include text(14px, pnb, 20px, $text-cl,none);
+                }
+            }
+            .price__table{
+                border: 1px solid #000;
+                p{
+                    border-bottom: 1px solid black;
+                    height: 57px;
+                    display: flex;
+                    align-items: center;
+                    text-transform: capitalize;
+                    font-family: pnr;
+                    font-size: 14px;
+                
+                   
+                   padding-left: 61px;
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                    span{
+                        text-transform: none;
+                        display: flex;
+                        flex: 1;
+                        justify-content: flex-end;
+                        padding-right: 20px;
+                    }
+                }
+            }
+        }
+        &-floorplan{
+            h2{
+                @include text(32px, pneb, 30.48px, $text-cl, capitalize);
+                margin-bottom: 97px;
+
+            }
+        }
+
+        
+
+    }
+    &__specs{
+        padding-left: 20px;
+        padding-right: 20px;
+        h2{
+            @include text(32px, pneb, 30.48px, $text-cl, capitalize);
+            margin-bottom: 25px;
+        }
+        &-text{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 60px;
+            margin-bottom: 31px;
+            @include text(14px, pnr, 20px, $text-cl, none);
+            p{
+                margin-bottom: 30px;
+            }
+            .spect__right{
+                p{
+                    &:nth-child(2){
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .container{
+        padding-bottom: 70px;
+        position: relative;
+        &::after{
+            @include line();
+             bottom: 0;
+        }
+    }
+}
+
+
+
+@include sm{
+    .studioDetail{
+        &__bottom{
+            &-info{
+                padding-left: 20px;
+                width: calc(100% /16 * 4);
+            }
+            .download{
+                width: calc(100% /16 * 4);
+            }
+            .fullScreen{
+                width: calc(100% /16 * 4);
+            }
+            .btnctrs{
+                &:before{
+                    left: 51%;
+                }
+                .btnctr.--reverse{
+                    padding-right: 5px;
+                }
+                .btnctr.--next{
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+@include xs {
+    .studioDetail{
+        &__slider{
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        &__bottom{
+            padding-left: unset;
+            padding-right: unset;
+            margin-left: -10px;
+            margin-right: -10px;
+            border: none;
+            padding-bottom: 20px;
+            &-info{
+                padding-left: 30px;
+                width: unset;
+            }
+            .download,
+            .fullScreen,
+            .btnctrs{
+                display: none;
+            }
+
+            
+            
+        }
+        &__priceplan{
+            grid-template-columns: 1fr;
+            padding-left: unset;
+            padding-right: unset;
+            padding-bottom: 30px;
+    
+            &-pricing{
+                padding-bottom: 40px;
+                .price__text{
+                    p{
+                        max-width: 240px;
+                    span{
+                        display: block;
+                    }
+                    }
+                }
+            }
+            &-floorplan{
+                h2{
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        &__specs{
+            padding-left: unset;
+            padding-right: unset;
+            &-text{
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .footer.studio__footer{
+        --height-footer:215px;
+    }
+}
+

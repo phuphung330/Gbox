@@ -1,0 +1,172 @@
+// CSS HOMEPAGE
+// WELCOME SECTION
+.welcome {}
+
+@include xs {
+    .welcome {
+        &__desc{
+            display: none;
+        }
+        &__title{
+            margin-bottom: 25px;
+        }
+        &::after{
+            height: 0;
+        }
+    }
+}
+
+// PROJECT SECTION
+.project {
+    padding-top: 100px;
+    
+    position: relative;
+
+    &__catetory {
+        margin: 0 auto;
+        text-align: center;
+        @include text(12px, pnb, 22px, $grey-cl, uppercase);
+        padding-bottom: 11px;
+
+        a {
+            color: #a9a9a9;
+            margin: 0 20px;
+
+            &.active {
+                color: $text-cl;
+            }
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        row-gap: 30px;
+        position: relative;
+
+        &-item {
+            overflow: hidden;
+
+            .project__img {
+                position: relative;
+                height: 0;
+                padding-bottom: 56.25%;
+                overflow: hidden;
+
+                img {
+                    @include mid($flex:false);
+                    transform: translate(-50%, -50%) scale(1);
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    @include transition (0.5s);
+                }
+            }
+
+            .project__textbox {
+                @include mid($flex:true);
+                flex-direction: column;
+                padding-top: 32px;
+                padding-bottom: 31px;
+                text-align: center;
+                @include text(12px, pnb, 22px, $text-cl, none);
+
+                .title {
+                    text-transform: uppercase;
+                    margin-bottom: 13px;
+                    position: relative;
+                   
+
+                    &::before {
+                        position: absolute;
+                        height: 3px;
+                        content: '';
+                        width: 17px;
+                        background: $yellow-cl;
+                        bottom: -8px;
+                        left: 50%;
+                        transform: translate(-50%);
+                    }
+                }
+
+                .client {
+                    font-family: pnsb;
+                }
+
+                .name {
+                    font-family: pnsb;
+
+                    .italic__text {
+                        font-style: italic;
+                    }
+                }
+            }
+
+            &:hover {
+                .project__img {
+                    opacity: 0.8;
+                    @include transition (0.5s);
+
+                    img {
+                        transform: translate(-50%, -50%) scale(1.2);
+                        @include transition (0.5s);
+                    }
+                }
+                .project__textbox{
+                    .title{
+                        color: $yellow-cl;
+                        @include transition(0.5s);
+                    }
+                }
+            }
+
+        }
+
+
+
+
+
+    }
+    .container{
+        padding-bottom: 65px;
+        border-bottom: 0.5px solid $black-cl;
+    }
+
+   
+
+}
+
+
+
+@include sm {
+    .project{
+        &__list{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}
+
+@include xs {
+    .project{
+        padding-top: 0;
+        padding-bottom: 80px;
+        &__catetory{
+            display: none;
+        }
+        &__list{
+            grid-template-columns: 1fr;
+            row-gap:10px
+        }
+        .btnWorks{
+            &::before{
+                bottom: -34px;
+            }
+        }
+    .container{
+        padding-right: unset;
+        padding-left: unset;
+    }
+    }
+}
+

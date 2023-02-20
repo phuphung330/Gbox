@@ -1,0 +1,253 @@
+// css header
+.header {
+
+    &__top {
+        background: $grey-cl;
+        height: var(--height-header);
+        @include transition(0.5s);
+        .container{
+            .btnmenu {
+                display: none;
+                cursor: pointer;
+                width: 40px;
+                height: 22px;
+                position: relative;
+                z-index: 100;
+        
+                span {
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    
+                    
+                   
+                }
+        
+                &::before,
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    background-color: $yellow-cl;
+                    @include transition(0.5s);
+                    @include transform(rotate(0deg) translate(0px));
+        
+                }
+        
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                }
+        
+                &.active {
+                    &::before {
+                        @include transform(rotate(45deg) translate(4px, 5px));
+                        @include transition(0.5s);
+                    }
+        
+                    span {
+                        opacity: 0;
+                        @include transition (0.5s);
+                    }
+        
+                    &::after {
+                        @include transform(rotate(-45deg) translate(4px, -5px));
+                        @include transition(0.5s);
+                    }
+                }
+        
+        
+            }
+        
+        }
+
+        &.active {
+            --heightMenu: 57px;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            top: 0;
+            height: var(--heightMenu);
+
+            .container {
+                .header__menu {
+                    width: 100%;
+                    z-index: 300;
+                    margin-top: 0;
+                    height: 100%;
+
+                    &.--enable {
+                        display: inherit;
+                    }
+
+                    &::before {
+                        height: 0;
+                    }
+
+                    &-item {
+                        color: $white-cl;
+
+                        li {
+                            a {
+                                color: $white-cl;
+                            }
+                        }
+
+                        .logo_2 {
+                            display: flex;
+                            width: 35px;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+
+                }
+
+                h1 {
+                    display: none;
+                }
+
+                .logo_1 {
+                    display: none;
+                }
+
+                .fb__ico {
+                    display: none;
+                }
+            }
+        }
+
+        .container {
+            height: 100%;
+            @include mid($flex:true);
+            justify-content: space-between;
+
+            h1 {
+                visibility: hidden;
+                
+            }
+
+            .logo_1,
+            .fb__ico {
+                display: flex;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .container {
+        .header__menu {
+            --height-header: 67px;
+            height: var(--height-header);
+            @include mid($flex:true);
+            align-items: unset;
+            justify-content: space-between;
+            @include text(12px, pnb, 22px, $text-cl, uppercase);
+            position: relative;
+            margin-top: 11px;
+
+            &.--enable {
+                display: none;
+            }
+
+            &:before {
+                content: '';
+                height: 0.5px;
+                width: 100%;
+                background: $black-cl;
+                bottom: 12px;
+                position: absolute;
+            }
+
+            &-item {
+                @include mid($flex:true);
+                color: $text-cl;
+                @include transition(0.6s);
+
+                &:hover {
+                    color: $yellow-cl;
+                }
+
+                li {
+                    margin: 0 30px;
+                    height: 100%;
+
+                    a {
+                        color: $text-cl;
+                        @include transition(0.6s);
+                        height: 100%;
+                        @include mid($flex:true);
+
+                        &:hover {
+                            color: $yellow-cl;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+@include sm{
+    .header{
+        &__top{
+            .container{
+                .btnmenu{
+                    display: block;
+                    cursor: pointer;
+                }
+                h1{
+                    display: none;
+                }
+            }
+        &.active{
+            --heightMenu: 65px;
+            z-index: 500;
+            .container{
+                .header__menu.--enable{
+                    display: none;
+                }
+                .logo_1,
+                .fb__ico{
+                    display: flex;
+                }
+            }
+        }
+        }
+        .container{
+            .header__menu.--bottom{
+                display: none;
+            }
+        }
+
+    }
+}
+
+@include xs {
+    .header{
+        &__top{
+            --height-header: 60px;
+            .container{
+                .btnmenu{
+                    width: 20px;
+                    height: 15px;
+                }
+                .logo_1{
+                    width: 35px;
+                }
+            }
+            &.active{
+                --heightMenu: 60px;
+                z-index: 500;
+            }
+        }   
+    }
+}

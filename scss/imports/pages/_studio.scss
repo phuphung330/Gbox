@@ -1,0 +1,212 @@
+.studio{
+   
+    padding-top: 58px;
+    padding-bottom: 100px;
+    
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 70px 20px;
+        &-item{
+            &:hover{
+                .studio__img{
+                    overflow: hidden;
+                    &::before{
+                        opacity: 0;
+                    }
+                 
+                 
+                    img{
+                        filter: grayscale(0);
+                        @include transform(translate(-50%,-50%) scale(1));
+                        @include transition(0.8s);
+                      
+                        
+                    }
+
+                }
+                .studio__textbox{
+                    @include transition(0.7s);
+                    &-detail{
+                        background-color: $grey-cl;
+                        @include transition(0.7s);
+                       .detail__left{
+                           span,p{
+                               color: $white-cl;
+                               @include transition(0.7s);   
+                           }
+                       }
+                       .detail__right{
+                           .btnWorks{
+                              .btnWorks__text{
+                                  color: $white-cl;
+                                  @include transition(0.7s);
+                              }
+                              .btnWorks__icon{
+                                  i{
+                                      svg{
+                                          .cls-1{
+                                              fill: $yellow-cl;
+                                          }
+                                      }
+                                  }
+                              }
+                           }
+                       }
+                    }
+                }
+            }
+            .studio__img{
+                @include ImgWrapper ();
+                overflow: hidden;
+                &::before{
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $black-cl;
+                    position: absolute;
+                    z-index: 1;
+                    opacity: 0.5;
+                    @include transition(0.7s);
+                }
+          
+                img{
+
+                  
+                    filter: grayscale(1);
+                    @include mid($flex:false);
+                    transform: translate(-50%, -50%) scale(1.2);
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    @include transition (0.8s);
+                }
+            }
+            .studio__textbox{
+                display: grid;
+                grid-template-columns: 120px 1fr;
+              
+                &-detail{
+                    display: flex;
+                    padding-left: 65px;
+                   
+                    padding-top: 30px;
+                    .detail__left{
+                        margin-right: 60px;
+                        span{
+                            @include text(12px, pnr, 30.48px, $text-cl, uppercase);
+                        }
+                        p{
+                            @include text(12px, pnr, 20px, $grey-cl, none);
+                        }
+                    }
+
+                    .detail__right{
+                       .btnWorks{
+                           &::before{
+                               height: 0;
+                           }
+                           margin-top: unset;
+                           .btnWorks__text{
+                            @include text(12px, pnsb, 30.48px, $grey-cl, uppercase);
+                           }
+                       }
+                    }
+                }
+            }
+        }
+    }
+
+    .container{
+        position: relative;
+        &::after{
+            @include line();
+            bottom: -100px;
+        }
+    }
+}
+
+@include sm{
+    .studio{
+        &__list{
+            &-item{
+                .studio__textbox{
+                    grid-template-columns: 10rem 1fr;
+                    &-number{
+                        --heightNumber : 10rem;
+                        height: var(--heightNumber);
+                    }
+                    &-detail{
+                        
+                        padding-top: 23px;
+                        padding-left: 20px;
+                        padding-left: unset;
+                        .detail__left{
+                            margin-right: 20px;
+                            padding-left: 25px;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include xs{
+    .studio{
+        &__list{
+            grid-template-columns: 1fr;
+            &-item{
+                .studio__img{
+                    padding-bottom: 66.66%;
+                }
+                .studio__textbox{
+                    grid-template-columns: 7.5rem 1fr;
+                    &-number{
+                        --heightNumber:7.5rem;
+                        height: var(--heightNumber);
+                        h5{
+                            margin-top: -7px;
+                            font-size: 12px;
+                            margin-bottom: 6px;
+                        }
+                        h3{
+                            font-size: 38.38px;
+                        }
+                        &.box__number{
+                            min-width: 7.5rem
+                        }
+                        
+                    }
+                    &-detail{
+                        display: flex;
+                        justify-content: space-between;
+                        padding-top: unset;
+                        .detail__left{
+                           
+                          
+                        }
+                        .detail__right{
+                            display: flex;
+                            .btnWorks{
+                                .btnWorks__text{
+                                    display: none;
+                                }
+                                .btnWorks__icon{
+                                    width: 17px;
+                                    @include transform(rotate(-90deg));
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
